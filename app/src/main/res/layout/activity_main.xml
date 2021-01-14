@@ -1,0 +1,250 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_bg"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:titleTextAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        app:titleTextColor="@color/white" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolBar">
+
+
+
+
+
+        <RelativeLayout
+
+            android:id="@+id/btnLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/rlHome"
+            android:layout_marginBottom="@dimen/circle_progress">
+
+            <LinearLayout
+                android:id="@+id/midScreen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:orientation="vertical"
+               >
+
+
+                <LinearLayout
+                    android:id="@+id/lytPlay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_dp"
+                    android:background="@drawable/button_bg_rec">
+
+                    <TextView
+                        android:id="@+id/tvPlay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/margin_dp"
+                        android:layout_marginEnd="@dimen/margin_dp"
+                        android:drawablePadding="@dimen/margin_dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:paddingStart="@dimen/margin_dp"
+                        android:paddingTop="8dp"
+                        android:paddingEnd="@dimen/margin_dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/play_quiz"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/colorPrimaryDark" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lytBattle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:background="@drawable/button_bg_rec">
+
+
+                    <TextView
+                        android:id="@+id/tvBattle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/circle_progress"
+                        android:layout_marginEnd="@dimen/circle_progress"
+                        android:drawablePadding="@dimen/margin_dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:gravity="center"
+
+                        android:paddingStart="@dimen/margin_dp"
+                        android:paddingTop="8dp"
+                        android:paddingEnd="@dimen/margin_dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/battle_quiz"
+
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/colorPrimaryDark" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lytSelfChallenge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:background="@drawable/button_bg_rec">
+
+
+                    <TextView
+                        android:id="@+id/tvSelfChallenge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/circle_progress"
+                        android:layout_marginEnd="@dimen/circle_progress"
+                        android:drawablePadding="@dimen/margin_dp"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:gravity="center"
+
+                        android:paddingStart="@dimen/margin_dp"
+                        android:paddingTop="8dp"
+                        android:paddingEnd="@dimen/margin_dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/self_challenge"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/colorPrimaryDark" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvAlert"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/txt_color"
+                android:textStyle="bold"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/mainLogo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/btnLayout"
+
+
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/logo" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:minHeight="?attr/actionBarSize"
+            android:orientation="horizontal"
+
+            android:weightSum="5">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="LeaderBoard"
+                android:padding="@dimen/margin_10dp"
+                android:src="@drawable/leaderboard" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="UserProfile"
+                android:padding="@dimen/margin_10dp"
+                app:srcCompat="@drawable/user" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="Settings"
+                android:padding="@dimen/margin_10dp"
+                app:srcCompat="@drawable/setting" />
+
+            <ImageView
+                android:id="@+id/imgLogout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:onClick="Logout"
+                android:padding="@dimen/margin_10dp"
+                android:src="@drawable/logout"
+             />
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:onClick="StartQuiz"
+            android:layoutDirection="ltr"
+            android:background="@drawable/round_shadow1">
+
+            <ImageView
+                android:id="@+id/imgQuiz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+
+                android:padding="@dimen/margin_dp"
+                app:srcCompat="@drawable/ic_start" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+
+

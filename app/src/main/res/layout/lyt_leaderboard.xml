@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginStart="@dimen/margin_10dp"
+    android:layout_marginEnd="@dimen/margin_10dp"
+>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/answer_bg">
+
+        <TextView
+            android:id="@+id/tvRank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/rank_bg"
+            android:gravity="center"
+            android:padding="3dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="6dp"
+            android:text="@string/zero"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:id="@+id/lytimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/tvRank"
+            android:gravity="center"
+            android:layoutDirection="ltr"
+           >
+
+            <com.codestown.examinoo.helper.CircleImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="@dimen/progress_h_w"
+                android:layout_height="@dimen/progress_h_w"
+                android:layout_margin="@dimen/margin_10dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:layout_toStartOf="@+id/tvScore"
+            android:layout_toEndOf="@+id/lytimg"
+            android:text="@string/name"
+            android:textColor="@color/txt_color" />
+
+        <TextView
+            android:id="@+id/tvScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/score_bg"
+            android:gravity="center"
+            android:minWidth="70dp"
+            android:padding="3dp"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

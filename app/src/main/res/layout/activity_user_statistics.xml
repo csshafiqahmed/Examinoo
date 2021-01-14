@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    tools:context=".activity.UserStatistics">
+
+    <include layout="@layout/toolbar_layout" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_below="@+id/toolBar"
+        android:background="@drawable/drop_shadow" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/banner_AdView"
+        android:layout_below="@+id/divider"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10dp"
+                android:layout_marginEnd="@dimen/margin_10dp"
+                android:background="@drawable/card_shadow"
+                android:weightSum="5">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.8"
+                    android:gravity="center">
+
+                    <RelativeLayout
+                        android:id="@+id/imgLayout"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/circle_bg"
+                        android:padding="2dp">
+
+                        <com.codestown.examinoo.helper.CircleImageView
+                            android:id="@+id/imgProfile"
+                            android:layout_width="85dp"
+                            android:layout_height="85dp"
+                            android:layout_margin="2dp" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tvName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/imgLayout"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="5dp"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:text="@string/name"
+                        android:textColor="@color/txt_color"
+                        android:textSize="@dimen/mid_text" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/margin_10dp"
+                    android:layout_weight="2.2"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rank"
+                        android:textColor="@color/txt_color"
+                        android:fontFamily="@font/open_sans_semibold"/>
+
+                    <TextView
+                        android:id="@+id/tvRank"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/zero"
+                        android:textColor="@color/dark_gray" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="@color/light_gray" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/coins"
+                        android:textColor="@color/txt_color"
+                        android:fontFamily="@font/open_sans_semibold" />
+
+                    <TextView
+                        android:id="@+id/tvCoin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/zero"
+                        android:textColor="@color/dark_gray" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="@color/light_gray" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/score"
+                        android:textColor="@color/txt_color"
+                        android:fontFamily="@font/open_sans_semibold"/>
+
+                    <TextView
+                        android:id="@+id/tvScore"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/zero"
+                        android:textColor="@color/dark_gray" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10dp"
+
+                android:gravity="center"
+                android:text="@string/user_statistics"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/txt_color"
+                android:fontFamily="@font/open_sans_semibold" />
+
+            <FrameLayout
+                android:id="@+id/adFrameLyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_dp"
+                android:layout_marginEnd="@dimen/margin_dp"
+                android:layout_marginBottom="@dimen/margin_10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10dp"
+                android:layout_marginEnd="@dimen/margin_10dp"
+                android:layout_marginBottom="@dimen/margin_10dp"
+                android:background="@drawable/card_shadow"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_10dp"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_10dp"
+
+                        android:background="@drawable/attended_bg">
+
+                        <View
+                            android:id="@+id/view3"
+                            android:layout_width="@dimen/margin_dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark" />
+
+                        <TextView
+                            android:id="@+id/tvAttended"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/view3"
+                            android:text="@string/zero"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvAttended"
+                            android:layout_toEndOf="@+id/view3"
+
+                            android:text="@string/attended"
+                            android:textColor="@color/gray" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_10dp"
+                        android:background="@drawable/correct_bg">
+
+                        <View
+                            android:id="@+id/view1"
+                            android:layout_width="@dimen/margin_dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/tvCorrect"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/view1"
+                            android:text="@string/zero"
+                            android:textColor="@color/black" />
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvCorrect"
+                            android:layout_toEndOf="@+id/view1"
+                            android:text="@string/correct_ans"
+                            android:textColor="@color/gray" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_10dp"
+                        android:background="@drawable/in_correct_bg">
+
+                        <View
+                            android:id="@+id/view2"
+                            android:layout_width="@dimen/margin_dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/tvInCorrect"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/view2"
+                            android:text="@string/zero"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvInCorrect"
+                            android:layout_toEndOf="@+id/view2"
+                            android:text="@string/incorrect"
+                            android:textColor="@color/gray" />
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                    <com.codestown.examinoo.helper.AudienceProgress
+                        android:id="@+id/progress"
+                        android:layout_width="@dimen/result_circle"
+                        android:layout_height="@dimen/result_circle"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="@dimen/margin_dp"
+                        app:direction="clockwise" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/progress"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="@dimen/margin_10dp">
+
+                        <TextView
+                            android:id="@+id/tvCorrectP"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="3dp"
+                            android:textColor="@color/txt_color"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tvInCorrectP"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_10dp"
+                            android:layout_toEndOf="@+id/tvCorrectP"
+                            android:drawablePadding="3dp"
+                            android:textColor="@color/txt_color"
+                            android:textSize="12sp" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/banner_AdView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="BANNER"
+        app:adUnitId="@string/admob_banner_id" />
+</RelativeLayout>

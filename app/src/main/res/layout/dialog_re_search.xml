@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/card_shadow"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center|top"
+        android:padding="7dp"
+        android:text="@string/app_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+
+
+    <LinearLayout
+        android:id="@+id/tryLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:layout_marginBottom="@dimen/margin_10dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/tvSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_10dp"
+            android:layout_weight="1"
+            android:background="@drawable/left_btn_bg"
+            android:gravity="center"
+            android:padding="7dp"
+
+            android:text="@string/find_player"
+            android:textColor="@color/white"
+            android:textSize="@dimen/mid_text"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/btnExit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_10dp"
+            android:layout_weight="1"
+            android:background="@drawable/right_btn_bg"
+            android:gravity="center"
+            android:padding="7dp"
+            android:text="@string/exit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/mid_text"
+
+            android:visibility="visible" />
+    </LinearLayout>
+
+
+</LinearLayout>
+

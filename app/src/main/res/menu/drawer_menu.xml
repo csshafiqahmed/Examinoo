@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/leaderboard"
+            android:icon="@drawable/ic_leaderboard"
+            android:title="@string/leaderboard" />
+        <item
+            android:id="@+id/statistic"
+            android:icon="@drawable/ic_statistics"
+            android:title="@string/statistics" />
+        <item
+            android:id="@+id/bookmark"
+            android:icon="@drawable/ic_bookmarks"
+            android:title="@string/bookmarks" />
+        <item
+            android:id="@+id/notification"
+            android:icon="@drawable/ic_notifications"
+            android:title="@string/notification" />
+    </group>
+
+    <group
+        android:id="@+id/menu_middle"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/invite"
+            android:icon="@drawable/ic_invite"
+            android:title="@string/invite_frnd" />
+
+        <item
+            android:id="@+id/instruction"
+            android:icon="@drawable/ic_introduction"
+            android:title="@string/instruction" />
+        <item
+            android:id="@+id/setting"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/action_settings" />
+        <item
+            android:id="@+id/share"
+            android:icon="@drawable/ic_share"
+            android:title="@string/share_app" />
+    </group>
+
+    <group
+        android:id="@+id/menu_bottom"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/about"
+            android:icon="@drawable/ic_about"
+            android:title="@string/about_us" />
+        <item
+            android:id="@+id/terms"
+            android:icon="@drawable/ic_terms"
+            android:title="@string/terms" />
+        <item
+            android:id="@+id/privacy"
+            android:icon="@drawable/ic_privacy"
+            android:title="@string/privacy_policy" />
+    </group>
+
+</menu>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.NewSelfChallengeActivity">
+
+    <include layout="@layout/toolbar_layout" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvCate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_dp"
+                    android:layout_marginTop="@dimen/margin_dp"
+                    android:text="@string/select_category"
+                    android:textColor="@color/txt_color"
+                    android:textSize="@dimen/default_text_size" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar1"
+                    style="?android:attr/progressBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/margin_10dp"
+                    android:visibility="gone" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/cateRecyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvCateName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvCate"
+                    android:layout_marginStart="@dimen/margin_dp"
+                    android:layout_marginTop="@dimen/margin_dp"
+                    android:layout_marginEnd="@dimen/margin_dp"
+                    android:background="@drawable/answer_bg_border"
+                    android:padding="@dimen/margin_10dp"
+                    android:text="@string/select_category"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <Spinner
+                    android:id="@+id/cateSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_below="@+id/tvCateName"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/margin_dp"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/subCateLyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvSubCate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_dp"
+                    android:layout_marginTop="@dimen/margin_dp"
+                    android:text="@string/select_sub_category"
+                    android:textColor="@color/txt_color"
+                    android:textSize="@dimen/default_text_size" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar2"
+                    style="?android:attr/progressBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/margin_10dp"
+                    android:visibility="gone" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/subRecyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvSubCate"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvSubCateName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvSubCate"
+                    android:layout_margin="@dimen/margin_dp"
+                    android:background="@drawable/answer_bg_border"
+                    android:padding="@dimen/margin_10dp"
+                    android:text="@string/select_sub_category"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <Spinner
+                    android:id="@+id/subCateSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_below="@+id/tvSubCateName"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/margin_dp"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="@dimen/margin_dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="@dimen/margin_dp"
+                android:background="@drawable/doted"
+                android:layerType="software" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_dp"
+                android:background="@color/bg_color"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_10dp">
+
+                <TextView
+                    android:id="@+id/tvSelectQues"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_10dp"
+                    android:text="@string/select_no_of_question"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/mid_text" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/questionView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tvAlert"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/question_not_available"
+                    android:textColor="@color/txt_color"
+                    android:visibility="gone"/>
+
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/adFrameLyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_dp"
+                android:layout_marginEnd="@dimen/margin_dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_dp"
+                android:background="@color/bg_color"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_10dp"
+                    android:text="@string/select_time_period"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/mid_text" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/timeView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvStartChallenge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/progress_h_w"
+                android:layout_marginTop="@dimen/option_btn_height"
+                android:layout_marginEnd="@dimen/progress_h_w"
+                android:layout_marginBottom="@dimen/option_btn_height"
+                android:background="@drawable/button_gradient"
+                android:gravity="center"
+                android:onClick="StartChallenge"
+                android:padding="@dimen/margin_10dp"
+                android:text="@string/lets_start"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

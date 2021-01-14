@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tvSelect"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/margin_10dp"
+    android:background="@drawable/answer_bg_border"
+    android:paddingStart="@dimen/option_btn_height"
+    android:paddingTop="7dp"
+    android:paddingEnd="@dimen/option_btn_height"
+    android:paddingBottom="7dp"
+    android:text="@string/zero"
+    android:textColor="@color/colorPrimaryDark"
+    android:textSize="@dimen/default_text_size">
+
+</TextView>

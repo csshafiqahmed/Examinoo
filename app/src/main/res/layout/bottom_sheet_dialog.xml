@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+
+        <ImageView
+            android:id="@+id/imgClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
+            android:padding="5dp"
+            app:srcCompat="@drawable/ic_close" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/bg_color" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_dp"
+        android:layout_marginTop="@dimen/margin_dp"
+        android:text="@string/color_code"
+        android:textColor="@color/black"
+        android:textSize="@dimen/mid_text"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_20dp">
+
+        <TextView
+            android:id="@+id/tvAnswered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_10dp"
+            android:drawablePadding="@dimen/margin_10dp"
+            android:gravity="center"
+            android:text="@string/attended"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tvNotAnswered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_10dp"
+            android:layout_toEndOf="@+id/tvAnswered"
+            android:drawablePadding="@dimen/margin_10dp"
+            android:gravity="center"
+            android:paddingStart="@dimen/margin_dp"
+            android:text="@string/un_attend"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+</LinearLayout>

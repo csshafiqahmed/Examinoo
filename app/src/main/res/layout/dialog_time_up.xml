@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/card_shadow"
+    android:orientation="vertical"
+
+    >
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/faceImg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center_horizontal"
+            android:padding="5dp"
+            app:srcCompat="@drawable/ic_sad" />
+
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:lineSpacingExtra="5dp"
+            android:text="@string/msg_player_not_available"
+            android:textColor="@color/black"
+            android:textSize="@dimen/default_text_size" />
+
+        <RelativeLayout
+            android:id="@+id/imgcardView"
+            android:layout_width="@dimen/circle_height"
+            android:layout_height="@dimen/circle_height"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/button_bg">
+
+            <com.codestown.examinoo.helper.CircleImageView
+                android:id="@+id/imgPlayer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp" />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/tryLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10dp"
+            android:layout_marginBottom="@dimen/margin_10dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/btnRobot"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_10dp"
+                android:layout_weight="1"
+                android:background="@drawable/left_btn_bg"
+                android:gravity="center"
+                android:padding="7dp"
+
+                android:text="@string/play_with_computer1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/mid_text"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/btnTryAgain"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_10dp"
+                android:layout_weight="1"
+                android:background="@drawable/right_btn_bg"
+                android:gravity="center"
+                android:padding="7dp"
+                android:text="@string/try_again1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/mid_text"
+
+                android:visibility="visible" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvExit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:padding="@dimen/margin_10dp"
+        android:text="@string/exit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
+

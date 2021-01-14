@@ -1,0 +1,599 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/play_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+
+    android:orientation="vertical"
+    tools:context="activity.PlayActivity">
+    <include layout="@layout/toolbar_layout" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolBar">
+
+        <RelativeLayout
+            android:id="@+id/checkLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvNoConnection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/msg_no_internet"
+                android:textSize="@dimen/default_text_size" />
+
+            <Button
+                android:id="@+id/btnTry"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvNoConnection"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_dp"
+                android:paddingStart="@dimen/circle_progress"
+                android:paddingEnd="@dimen/circle_progress"
+                android:text="@string/try_again"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/drop_shadow" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/innerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/divider"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/topLyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutDirection="ltr">
+
+
+                <LinearLayout
+                    android:id="@+id/score_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgCoin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:padding="3dp"
+                            android:src="@drawable/coins"
+                            android:tint="@color/colorPrimaryDark" />
+
+                        <TextView
+                            android:id="@+id/coin_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/margin_10dp"
+                            android:text="@string/zero"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textColor="@color/txt_color" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="3dp">
+
+                        <com.codestown.examinoo.helper.CircleTimer
+                            android:id="@+id/circleTimer"
+                            android:layout_width="@dimen/progress_h_w"
+                            android:layout_height="@dimen/progress_h_w"
+                            app:direction="counterclockwise" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="start"
+                        android:orientation="horizontal">
+
+
+                        <ImageView
+                            android:id="@+id/imgScore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="3dp"
+                            android:src="@drawable/rank"
+                            android:tint="@color/colorPrimaryDark" />
+
+                        <TextView
+                            android:id="@+id/txtScore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/margin_10dp"
+                            android:text="@string/zero"
+
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textColor="@color/txt_color" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/bottom_panel"
+                android:layout_below="@+id/topLyt">
+
+
+                <RelativeLayout
+                    android:id="@+id/main_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ScrollView
+                        android:id="@+id/mainScroll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="5">
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="0.6"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/txtTrueQuestion"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/zero"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                            android:textColor="@color/wrong_dark" />
+
+                                        <RelativeLayout
+                                            android:layout_width="15dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/margin_10dp"
+                                            android:gravity="center">
+
+                                            <ProgressBar
+                                                android:id="@+id/rightProgress"
+                                                style="@android:style/Widget.ProgressBar.Horizontal"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="match_parent"
+                                                android:minHeight="@dimen/que_img_height"
+                                                android:progressDrawable="@drawable/right_progress" />
+                                        </RelativeLayout>
+                                    </LinearLayout>
+
+                                   <include layout="@layout/lyt_question_display" />
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="0.6"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/txtFalseQuestion"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+
+                                            android:gravity="center"
+                                            android:text="@string/zero"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                            android:textColor="@color/right_dark" />
+
+                                        <RelativeLayout
+                                            android:layout_width="15dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/margin_10dp"
+                                            android:gravity="center">
+
+                                            <ProgressBar
+                                                android:id="@+id/wrongProgress"
+                                                style="@android:style/Widget.ProgressBar.Horizontal"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="match_parent"
+                                                android:minHeight="@dimen/que_img_height"
+                                                android:progressDrawable="@drawable/wrong_progress" />
+                                        </RelativeLayout>
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <RelativeLayout
+                                    android:id="@+id/layout_answare"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:id="@+id/txtQuestion1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginStart="@dimen/margin_10dp"
+                                        android:layout_marginTop="@dimen/margin_10dp"
+                                        android:layout_marginEnd="@dimen/margin_10dp"
+                                        android:gravity="center"
+                                        android:padding="5dp"
+                                        android:text="@string/app_name"
+                                        android:textColor="@color/txt_color"
+                                        android:textSize="15dp"
+                                        android:visibility="visible" />
+
+
+                                </RelativeLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin_10dp"
+                                    android:orientation="vertical">
+
+
+                                    <RelativeLayout
+                                        android:id="@+id/a_layout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/margin_10dp"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginEnd="@dimen/margin_10dp"
+                                        android:background="@drawable/card_shadow">
+
+                                        <TextView
+                                            android:id="@+id/option_a"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_margin="10dp"
+                                            android:background="@drawable/option_bg"
+                                            android:gravity="center"
+                                            android:text="@string/a"
+                                            android:textColor="@color/white"
+                                            android:textSize="@dimen/mid_text"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/btnOpt1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginEnd="5dp"
+
+                                            android:layout_toStartOf="@+id/progress_A"
+                                            android:layout_toEndOf="@+id/option_a"
+                                            android:padding="5dp"
+                                            android:text="@string/answer"
+                                            android:textColor="@color/txt_color" />
+
+                                        <com.codestown.examinoo.helper.AudienceProgress
+                                            android:id="@+id/progress_A"
+                                            android:layout_width="@dimen/circle_progress"
+                                            android:layout_height="@dimen/circle_progress"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginEnd="3dp"
+                                            android:visibility="gone"
+                                            app:direction="clockwise" />
+                                    </RelativeLayout>
+
+
+                                    <RelativeLayout
+                                        android:id="@+id/b_layout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/margin_10dp"
+                                        android:layout_marginEnd="@dimen/margin_10dp"
+
+                                        android:background="@drawable/card_shadow">
+
+                                        <TextView
+                                            android:id="@+id/option_b"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_margin="@dimen/margin_10dp"
+                                            android:background="@drawable/option_bg"
+                                            android:gravity="center"
+                                            android:text="@string/b"
+                                            android:textColor="@color/white"
+                                            android:textSize="@dimen/mid_text"
+                                            android:textStyle="bold" />
+
+
+                                        <TextView
+                                            android:id="@+id/btnOpt2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_toStartOf="@+id/progress_B"
+                                            android:layout_toEndOf="@+id/option_b"
+                                            android:padding="5dp"
+                                            android:text="@string/answer"
+                                            android:textColor="@color/txt_color" />
+
+                                        <com.codestown.examinoo.helper.AudienceProgress
+                                            android:id="@+id/progress_B"
+                                            android:layout_width="@dimen/circle_progress"
+                                            android:layout_height="@dimen/circle_progress"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginEnd="3dp"
+                                            android:visibility="gone"
+                                            app:direction="clockwise" />
+
+                                    </RelativeLayout>
+
+
+                                    <RelativeLayout
+                                        android:id="@+id/c_layout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/margin_10dp"
+                                        android:layout_marginEnd="@dimen/margin_10dp"
+                                        android:background="@drawable/card_shadow">
+
+                                        <TextView
+                                            android:id="@+id/option_c"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="@dimen/margin_10dp"
+                                            android:background="@drawable/option_bg"
+                                            android:gravity="center"
+                                            android:text="@string/c"
+                                            android:textColor="@color/white"
+                                            android:textSize="@dimen/mid_text"
+                                            android:textStyle="bold" />
+
+
+                                        <TextView
+                                            android:id="@+id/btnOpt3"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_toStartOf="@+id/progress_C"
+
+                                            android:layout_toEndOf="@+id/option_c"
+                                            android:padding="5dp"
+                                            android:text="@string/answer"
+                                            android:textColor="@color/txt_color" />
+
+                                        <com.codestown.examinoo.helper.AudienceProgress
+                                            android:id="@+id/progress_C"
+                                            android:layout_width="@dimen/circle_progress"
+                                            android:layout_height="@dimen/circle_progress"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginEnd="3dp"
+                                            android:visibility="gone"
+                                            app:direction="clockwise" />
+                                    </RelativeLayout>
+
+
+                                    <RelativeLayout
+                                        android:id="@+id/d_layout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/margin_10dp"
+                                        android:layout_marginEnd="@dimen/margin_10dp"
+
+                                        android:background="@drawable/card_shadow">
+
+                                        <TextView
+                                            android:id="@+id/option_d"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_margin="@dimen/margin_10dp"
+                                            android:background="@drawable/option_bg"
+                                            android:gravity="center"
+                                            android:text="@string/d"
+                                            android:textColor="@color/white"
+                                            android:textSize="@dimen/mid_text"
+                                            android:textStyle="bold" />
+
+
+                                        <TextView
+                                            android:id="@+id/btnOpt4"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_toStartOf="@+id/progress_D"
+                                            android:layout_toEndOf="@+id/option_d"
+                                            android:padding="5dp"
+                                            android:text="@string/answer"
+                                            android:textColor="@color/txt_color" />
+
+                                        <com.codestown.examinoo.helper.AudienceProgress
+                                            android:id="@+id/progress_D"
+                                            android:layout_width="@dimen/circle_progress"
+                                            android:layout_height="@dimen/circle_progress"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginEnd="3dp"
+                                            android:visibility="gone"
+                                            app:direction="clockwise" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:id="@+id/e_layout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/margin_10dp"
+                                        android:layout_marginEnd="@dimen/margin_10dp"
+                                        android:background="@drawable/card_shadow"
+                                        android:visibility="gone">
+
+                                        <TextView
+                                            android:id="@+id/option_e"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_margin="@dimen/margin_10dp"
+                                            android:background="@drawable/option_bg"
+                                            android:gravity="center"
+                                            android:text="@string/e"
+                                            android:textColor="@color/white"
+                                            android:textSize="@dimen/mid_text"
+                                            android:textStyle="bold" />
+
+
+                                        <TextView
+                                            android:id="@+id/btnOpt5"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginEnd="5dp"
+                                            android:layout_toStartOf="@+id/progress_E"
+                                            android:layout_toEndOf="@+id/option_e"
+                                            android:padding="5dp"
+                                            android:text="@string/answer"
+                                            android:textColor="@color/txt_color" />
+
+                                        <com.codestown.examinoo.helper.AudienceProgress
+                                            android:id="@+id/progress_E"
+                                            android:layout_width="@dimen/circle_progress"
+                                            android:layout_height="@dimen/circle_progress"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginEnd="3dp"
+                                            android:visibility="gone"
+                                            app:direction="clockwise" />
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </ScrollView>
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bottom_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/white"
+                android:gravity="bottom"
+                android:layoutDirection="ltr">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+
+                    <ImageView
+                        android:id="@+id/fifty_fifty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:onClick="FiftyFifty"
+                        android:src="@drawable/fiftyfifty" />
+
+
+                    <ImageView
+                        android:id="@+id/skip_quation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:onClick="SkipQuestion"
+                        android:src="@drawable/skip" />
+
+
+                    <ImageView
+                        android:id="@+id/audience_poll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:onClick="AudiencePoll"
+                        android:src="@drawable/audiencepool" />
+
+
+                    <ImageView
+                        android:id="@+id/reset_timer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:onClick="ResetTimer"
+                        android:src="@drawable/resettime" />
+
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>
+
+

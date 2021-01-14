@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+    <color name="colorPrimary">#39819c</color>
+    <color name="colorPrimaryDark">#306c83</color>
+    <color name="colorAccent">#39819c</color>
+    <color name="lightAccent">#05cfd8</color>
+    <color name="color_trans">#50306c83</color>
+    <color name="select_color">#90306c83</color>
+    <color name="txt_color">#020607</color>
+    <color name="right_dark">#ff7d7d</color>
+    <color name="wrong_dark">#3cd968</color>
+    <color name="red">#ff7d7d</color>
+    <color name="green">#3cd968</color>
+    <color name="bg_color">#eee</color>
+    <color name="light_black">#191919</color>
+    <color name="gray1">#f1f1f1</color>
+    <color name="toolbar_color">#80e6e6e6</color>
+    <!--background color of lifeline bg nd main page bottom bg colors-->
+    <color name="transparent">#00000000</color>
+    <color name="dark_red">#ff634e</color>
+    <color name="off_white">#f4f4f4</color>
+    <color name="gray">#808080</color>
+    <color name="light_gray">#d4d4d4</color>
+    <color name="lock_gray">#A8A8A8</color>
+    <color name="dark_gray">#504F4F</color>
+    <color name="correct">#3cd968</color>
+    <color name="incorrect">#ff7d7d</color>
+    <color name="light_green">#E2FFE4</color>
+    <color name="light_red">#ffe3e3</color>
+    <color name="edt_bg">#ecf5f8</color>
+
+    <!--<color name="right_dark">#ed2a2a</color>
+        <color name="wrong_dark">#22af4a</color>
+        <color name="red">#ed2a2a</color>
+        <color name="green">#22af4a</color>
+        <color name="correct">#149214</color>
+        <color name="incorrect">#FF0000</color>-->
+</resources>

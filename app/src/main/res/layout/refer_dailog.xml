@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_dp"
+    android:background="@drawable/card_shadow"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|top"
+        android:padding="7dp"
+        android:text="@string/apply_code"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/txt_color"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edtRefCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/view_corner"
+        android:layout_marginTop="@dimen/margin_dp"
+        android:layout_marginEnd="@dimen/view_corner"
+        android:layout_marginBottom="@dimen/margin_dp"
+        android:background="@drawable/edt_bg"
+        android:gravity="center"
+        android:hint="@string/ref_code"
+        android:padding="@dimen/margin_10dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/mid_text" />
+
+
+    <LinearLayout
+        android:id="@+id/tryLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_dp"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:layout_marginEnd="@dimen/margin_dp"
+        android:layout_marginBottom="@dimen/margin_10dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/tvCancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_10dp"
+            android:layout_weight="1"
+            android:background="@drawable/left_btn_bg"
+            android:gravity="center"
+            android:padding="7dp"
+            android:text="@string/cancel"
+            android:textColor="@color/white"
+            android:textSize="@dimen/mid_text"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tvApply"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_10dp"
+            android:layout_weight="1"
+            android:background="@drawable/right_btn_bg"
+            android:gravity="center"
+            android:padding="7dp"
+            android:text="@string/apply"
+            android:textColor="@color/white"
+            android:textSize="@dimen/mid_text"
+            android:visibility="visible" />
+    </LinearLayout>
+
+
+</LinearLayout>
+
